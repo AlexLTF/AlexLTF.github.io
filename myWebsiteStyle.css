@@ -1,0 +1,266 @@
+body, html {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family:   'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Arial, Helvetica;
+}
+
+
+.topnav {
+    position: fixed;
+   
+    width: 50%; 
+    height: 5%;
+    border-radius: 8px;
+    background-color: rgb(247, 243, 243); 
+    margin-top: 1.5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    z-index: 2;
+}
+
+.topnav a {
+    display: block;
+    color: black;
+    padding: 1% 2%;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.topnav a:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* darker background on hover */
+}
+
+.topnav a.active {
+    background-color: #717171;
+}
+
+.content {
+    margin-top: 0px; /* Adjust based on the height of the sidebar */
+   
+    height: 2000px; /* just for demonstration */
+    
+}
+
+@media screen and (max-width: 800px) {
+    .topnav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .topnav a {
+        float: left;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main {
+    
+    background-image: url(https://images.pexels.com/photos/163125/board-printed-circuit-board-computer-electronics-163125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 
+        -0.5px -1px 0 #000,  
+         0.5px -1px 0 #000,
+        -0.5px  1px 0 #000,
+         0.5px  1px 0 #000; 
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+#div1 {
+    position: relative;
+    z-index: 1; 
+}
+
+#div1 h1 {
+    margin-top: 50px;
+   margin-bottom: 10px;
+   font-size: 3.5em;
+   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5)
+}
+
+#div1 h3 {
+    margin: 20px;
+    font-size: 1.8em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+.line {
+    border-bottom: 3px solid white;
+    margin-top:-20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    text-align: center;
+    
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.buttonEmail, .buttonGithub, .buttonLinkedin {
+    border: none;
+    border-radius: 7px;
+    color: black;
+    font-size: medium;
+    background-color: white;
+    text-align: center; 
+    margin-right: 5px;
+    margin: 2%;
+    padding: 1% 2.5%;
+    font-size: 1em;
+    text-shadow: none;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.buttonGithub img {
+    width: 20px; 
+    height: 20px; 
+}
+
+.buttonLinkedin img {
+  
+    width: 18px; 
+    height: 18px; 
+    
+}
+
+
+.projects h2 {
+    background-color: white;
+    color: black;
+    margin-left: 3%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+   
+}
+
+.projects h3 {
+    margin-right: 5%;
+}
+
+#p1, #p2 {
+    border-radius: 5px;
+    background-color:rgb(237, 239, 242) ;
+    margin: 2%;
+    display: flex;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-top: 1%;
+}
+
+.proj{
+    transition: transform .2s;
+}
+
+.proj:hover {
+    transform: scale(1.02);
+}
+
+.madeWith {
+    font-size: 0.8em;
+    color:black;
+    display: flex;
+
+}
+
+.desc {
+    font-size: 0.9em;
+    color:black;
+
+}
+
+.projectLogo {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.skills {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.skills h2 {
+    margin-bottom: 10%;
+}
+
+.logo {
+    margin-right: 5%;
+    transition: transform .2s;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.experience {
+    margin-top: 15%;
+    margin: 2%;
+    margin-bottom: 15%;
+}
+
+#edu {
+    padding-bottom: 10%;
+}
+
+#edu h2 {
+    padding-bottom: 1%;
+    padding-top: 15%;
+}
+
+.education {
+    background-color: rgb(186, 213, 219);
+    margin-top: 1%;
+    padding-bottom: 1%;
+}
+
+.diploma {
+    margin-left: 25%;
+   padding-top: 8%;
+   display: flex;
+   align-items: flex-start;
+}
+
+.conco {
+    position: relative;
+    
+}
+
+.education img{
+    align-self: flex-start;
+    top: -40%;
+    left: -20%;
+
+}
+
+
+
+
