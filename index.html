@@ -4,152 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Alex Lee</title>
+
     <link rel="stylesheet" href="myWebsiteStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script defer src="app.js"></script>
+
+    <style>
+        /* Ensure the portfolio overlay is hidden at startup */
+        #portfolio {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 2;
+            overflow: auto;
+        }
+    </style>
 </head>
 
 <body>
- 
-    <div class="content">
 
-    <div class="topnav">
-        <a href="#div1">Home</a>
-        <a href="#p1">Projects</a>
-        <a href="#skillz">Skills</a>
-        <a href="#exp">Experience</a>
-        <a href="#edu">Education</a>
+    <!-- 3D Scene Container -->
+    <div id="threejs-container" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:1;"></div>
+
+    <!-- Portfolio Overlay (hidden by default) -->
+    <div id="portfolio">
+        <button onclick="document.getElementById('portfolio').style.display='none';" style="position:absolute; top:10px; right:10px; z-index:3;">Close ✕</button>
+        <iframe src="index.html" style="width:100%; height:100%; border:none;"></iframe>
     </div>
 
-  <div class="main">
+    <div class="content">
 
-        <div id="div1">
-            <h1>Alex Lee Tong Fong</h1> <br>
-            <h3> Hi, I'm Alex.<br><br> I'm a Computer Science major at Concordia University in Montreal.</h3> <br>
-            <div class="line"></div> <br>
-            <div class="buttonContainer">
-            <a href="mailto:alexltf06@gmail.com" class="buttonEmail" target="_blank"> &#9993; Email</a>
-            <a href ="https://github.com/AlexLTF"  class="buttonGithub" target="_blank"> GitHub</a>
-            <a href="https://www.linkedin.com/in/alex-lee-tong-fong-5a43ba226/" class="buttonLinkedin" target="_blank">LinkedIn</a>
+        <div class="topnav">
+            <a href="#div1">Home</a>
+            <a href="#p1">Projects</a>
+            <a href="#skillz">Skills</a>
+            <a href="#exp">Experience</a>
+            <a href="#edu">Education</a>
+        </div>
+
+        <div class="main">
+            <div id="div1">
+                <h1>Alex Lee Tong Fong</h1><br>
+                <h3>Hi, I'm Alex.<br><br> I'm a Computer Science major at Concordia University in Montreal.</h3><br>
+                <div class="line"></div><br>
+                <div class="buttonContainer">
+                    <a href="mailto:alexltf06@gmail.com" class="buttonEmail" target="_blank">✉ Email</a>
+                    <a href="https://github.com/AlexLTF" class="buttonGithub" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/alex-lee-tong-fong-5a43ba226/" class="buttonLinkedin" target="_blank">LinkedIn</a>
+                </div>
             </div>
         </div>
 
-    </div>
+        <div class="projects">
+            <h2><br>My Projects</h2>
+            <section class="hidden">
+                <div id="p1" class="proj">
+                    <h3>Formula 1 Data Visualization Web App<br><br>
+                        <span class="madeWith">Made with:
+                            <img src="images/html.png" class="projectLogo" width="4%" height="4%" alt="html">
+                            <img src="images/css" class="projectLogo" width="2.9%" height="2.9%" alt="css">
+                            <img src="images/js.png" class="projectLogo" width="4%" height="4%" alt="js">
+                        </span><br><br>
+                        <span class="desc">Developed a dynamic web application using HTML, CSS, and JavaScript that fetches real-time data from the OpenF1 API. Integrated API calls to retrieve detailed information about Formula 1 races, drivers, circuits, and real-time telemetry.</span>
+                    </h3>
+                </div>
 
-    <div class="projects">
-        <h2> <br> My Projects</h2>
-
-        <section class="hidden">
-        <div id="p1">
-        <div class="proj">
-            
-            <h3> Formula 1 Data Visualization Web App <br> <br> <span class="madeWith"> Made with: &nbsp; 
-
-                <img src="images/html.png" 
-                class="projectLogo" width="4%" height="4%" alt="html image">
-                
-                <img src="images/css"
-                class="projectLogo" width="2.9%" height="2.9%" alt="css image"> &nbsp; &nbsp;
-
-                <img src="images/js.png"
-                 class="projectlogo" width="4%" height="4%" alt="js image">
-                </span> <br> <br> 
-  
-            <span class="desc">Developed a dynamic web application using HTML, CSS, and JavaScript that fetches real-time data from the OpenF1 API. <br> <br>
-                Integrated API calls to retrieve detailed information about Formula 1 races, drivers and circuits, including driver statistics, real-time racing telemetry, and track details.<br> <br>
-                Implemented data display with DOM manipulation, ensuring a clean and responsive user interface for presenting driver and circuit information.
-             </span>
-            </h3> 
-        </div>  
+                <div id="p2" class="proj">
+                    <h3>Data Analytics Project<br><br>
+                        <span class="madeWith">Made with:
+                            <img src="images/python.png" class="projectLogo" width="5%" height="5%" alt="python">
+                        </span><br><br>
+                        <span class="desc">Machine learning project to predict US election outcomes using economic indicators like GDP, unemployment rate, and S&P 500. Built and optimized models including Logistic Regression, Neural Networks, and Random Forest.</span>
+                    </h3>
+                </div>
+            </section>
         </div>
-        
-        <div id="p2">
-        <div class="proj">
-        
-           <h3> Data Analytics Project <br> <br> <span class="madeWith">Made with: 
-           <img src="images/python.png"
-            class="projectLogo" width="5%" height="5%" alt="java image">
 
-           </span> <br> <br> 
-            <span class="desc">Machine learning task to predict the outcome of US elections based on different economic factors such as GDP,
-                unemployment rate, median house price, S&P 500, etc.<br><br>
-                Collected and processed economic and electoral data using APIs and governmental datasets, cleaned, transformed and performed exploratory data analysis, and built predictive models using machine learning techniques.<br><br>
-                Trained and optimized Logistic Regression, Neural Network and Random forest models.
-            </span>
-            </h3>
-      
+        <div id="skillz" class="skills">
+            <h2>My Skills</h2><br>
+            <img src="images/java" class="logo" width="15%" height="15%" alt="java">
+            <img src="images/python.png" class="logo" width="15%" height="15%" alt="python">
+            <img src="images/js.png" class="logo" width="15%" height="15%" alt="js">
+            <img src="images/html.png" class="logo" width="15%" height="15%" alt="html">
+            <img src="images/css" class="logo" width="10.7%" height="10.7%" alt="css">
+            <img src="images/csharp" class="logo" width="12%" height="12%" alt="csharp">
+            <img src="images/dotnet.png" class="logo" width="10%" height="10%" alt="dotnet">
         </div>
+
+        <div id="exp" class="experience">
+            <h2>My Experience</h2>
+            <section class="hidden">
+                <div class="work1">
+                    <img src="images/matrox.png" class="matrox" width="30%" height="30%" alt="matrox">
+                    <h3>OEM Applications Engineer Intern</h3>
+                    <h4>May 2024 - Aug 2024, Matrox Graphics Inc.</h4>
+                    <ul>
+                        <li>Developed REST API sample apps using .NET Framework</li>
+                        <li>Maintained and enhanced customer-facing sample applications</li>
+                        <li>Collaborated with OEM agents to address customer issues</li>
+                        <li>Set up test systems to replicate customer environments</li>
+                    </ul>
+                </div>
+            </section>
         </div>
-        </section>
-    
-    </div>
 
-    <div id="skillz">
-    <div class="skills">
-        
-        <h2>My Skills</h2> <br> 
-       
-        <img src="images/java"
-        class="logo" width="15%" height="15%" alt="java image">
-   
-        <img src="images/python.png"
-        class="logo" width="15%" height="15%" alt="python image">
+        <div id="edu" class="education">
+            <h2>My Education</h2>
+            <section class="hidden">
+                <div class="diploma">
+                    <img src="https://www.concordia.ca/content/concordia/en/social/guidelines-conduct.img.png/1650398601839.png" class="conco" width="12%" height="12%" alt="concordia">
+                    <h3>Bachelor of Computer Science<br><br>Gina Cody School of Engineering and Computer Science<br><br>Concordia University<br><br>2022–present</h3>
+                </div>
+            </section>
+        </div>
 
-        <img src="images/js.png"
-        class="logo" width="15%" height="15%" alt="js image">
-
-        <img src="images/html.png"
-        class="logo" width="15%" height="15%" alt="html image">
-
-        <img src="images/css"
-        class="logo" width="10.7%" height="10.7%" alt="css image"> 
-        
-        <img src="images/csharp"
-        class="logo" width="12%" height="12%" alt="csharp image">
-
-        <img src="images/dotnet.png"
-        class="logo" width="10%" height="10%" alt="dotnet image">
-   
-    </div>
-    </div>
-
-    <div id="exp">
-    <div class="experience">
-        <h2>My Experience</h2>
-          
-    <section class="hidden">   
-    <div class="work1">
-        <img src="images/matrox.png"
-        class="matrox"  width="30%" height="30%" alt="matrox image">
-
-        <br><h3>OEM Applications Engineer Intern</h3>
-        <h4>May 2024 - Aug 2024</h4>
-        <h4>Matrox Graphics Inc.</h4>
-        
-        <ul>
-            <li>Developed a sample application which interacts with our REST API using .NET Framework tools</li>
-            <li>Maintained and enhanced existing sample application used by our customers</li>
-            <li>Shadowed an OEM agent to solve and answer OEM specific customer issues and questions</li>
-            <li>Set up complex systems to reproduce customer environments</li>
-        </ul>
-    </div>
-</section> 
-        
-    <div id="edu">
-        <h2>My Education</h2>
-    <section class="hidden">
-    <div class="education">
-    <div class="diploma">
-        
-        <img src="https://www.concordia.ca/content/concordia/en/social/guidelines-conduct.img.png/1650398601839.png"
-        class="conco" width="12%" height="12%" alt="concordia logo image">
-
-        <h3>Bachelor of Computer Science <br> <br>  Gina Cody School of Engineering and Computer Science
-        <br> <br> Concordia University<br> <br> 2022-present</h3> 
-    
-    </div>
-    </div>
-    </section>
-</div>
+    </div> 
 
 </body>
 </html>
